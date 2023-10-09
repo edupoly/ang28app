@@ -6,65 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  updateFirstname(e:any){
-    this.firstname=e.target.value;
+  x = 100;
+  gender:any=null;
+  maleImg="https://media.istockphoto.com/id/155227534/photo/male-symbol.jpg?s=612x612&w=is&k=20&c=_58-td0uiciYnv4F0PcPR8fGZYnvP3NT0qncBRzIctc=";
+  femaleImg="https://media.istockphoto.com/id/1300219145/vector/unisex-washroom-accessibility-icon.jpg?s=1024x1024&w=is&k=20&c=10-WHQ3mY93JQWpdz2Z6jAq1zpVI1OXJSb9t056QEtI=";
+  othersImg='';
+  allTechnologies=["nodejs",'reactjs','mongodb','expressjs','angular','vuejs']
+  selectedTechnologies:any=[];
+  updateTechnologies(e:any){
+    if(e.target.checked){
+      this.selectedTechnologies.push(e.target.value)
+    }
+    else{
+      this.selectedTechnologies=this.selectedTechnologies.filter((tech:any)=>{
+        if(tech===e.target.value){
+          return false
+        }
+        else{
+          return true;
+        }
+      })
+    }
   }
-  abc(){
-    this.students.sort();
-  }
-  empsort(k:any){
-    this.employees.sort((a:any,b:any)=>{
-      if(a[k]>b[k]){
-        return 1
-      }
-      else{
-        return -1;
-      }
-    })
-  }
-  firstname="praveen";
-  lastname="gubbala"
-  num1=100;
-  num2=200;
-  students=['akhila','pavan','kalyan','siva','srinivas','prashant','naseer']
-  employees=[
-    {
-      firstname:'srinivas',
-      lastname:'korukonda',
-      age:33,
-      gender:'male'
-    },
-    {
-      firstname:'jayaprada',
-      lastname:'reddy',
-      age:25,
-      gender:'female'
-    },
-    {
-      firstname:'rani',
-      lastname:'reddy',
-      age:22,
-      gender:'female'
-    },
-    {
-      firstname:'rohit',
-      lastname:'vendra',
-      age:21,
-      gender:'male'
-    },
-    {
-      firstname:'pahi',
-      lastname:'tamuli',
-      age:19,
-      gender:'female'
-    },
-    {
-      firstname:'govindu',
-      lastname:'avala',
-      age:29,
-      gender:'male'
-    },
-  ]
 }
 
 //properties//data//state
@@ -78,3 +41,9 @@ export class AppComponent {
 
 //directive
 //ngFor
+//ngModel
+//two types of directives
+//1. behavioural directives
+//2. structurual directives
+//3. custome directives
+//4. component directives

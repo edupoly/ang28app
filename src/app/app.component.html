@@ -1,57 +1,17 @@
-<input type="text" [value]="firstname" (keyup)="updateFirstname($event)">
+<h1>{{x}}</h1>
+<input type="text" [(ngModel)]="x">
+<br>
+<input type="radio" name="gen" [(ngModel)]="gender" value="M">:Male &nbsp; &nbsp; &nbsp;
+<input type="radio" name="gen" [(ngModel)]="gender" value="F">:Female &nbsp; &nbsp; &nbsp;
+<input type="radio" name="gen" [(ngModel)]="gender" value="O">:Others &nbsp; &nbsp; &nbsp;
+<h1>Selected Gender : {{gender}}</h1>
 
+<img *ngIf="gender==='M'" [src]="maleImg" alt="" width="100px">
+<img *ngIf="gender==='F'" [src]="femaleImg" alt="" width="100px">
+<img *ngIf="gender==='O'" [src]="othersImg" alt="" width="100px">
 
-<h1>{{firstname}}</h1>
-
-
-<input type="text" [(ngModel)]="lastname">
-
-
-
-<h1>{{lastname}}</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-<button (click)="abc()">Lets understand Event Handling...</button>
-
-<table border="2">
-    <thead>
-        <tr>
-            <th (click)="empsort('firstname')">Fristname</th>
-            <th (click)="empsort('lastname')">Lastname</th>
-            <th (click)="empsort('age')">Age</th>
-            <th (click)="empsort('gender')">Gender</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let e of employees" [class]="e.gender==='male'?'boys':'girls'">
-        <td>{{e.firstname}}</td>
-        <td>{{e.lastname}}</td>
-        <td>{{e.age}}</td>
-        <td>{{e.gender}}</td>
-    </tr>
-    
-</table>
-<h4 *ngFor="let s of students">{{s}}</h4>
-<ol>
-    <li *ngFor="let p of students">{{p}}</li>
-</ol>
- -->
+<div *ngFor="let t of allTechnologies" >
+    <input type="checkbox" [value]="t" (change)="updateTechnologies($event)">
+    {{t}}
+</div>
+<h1 *ngFor="let t of selectedTechnologies">{{t}}</h1>
