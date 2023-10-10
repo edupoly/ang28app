@@ -6,75 +6,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  updateFirstname(e:any){
-    this.firstname=e.target.value;
+  firstname:any;
+
+  constructor(){
+    console.log("App Component Constructor Called")
+  }//called only at the time of mounting
+  ngOnInit(){
+    console.log("App Component ngOnInit Called");
+  }//called only at the time of mounting
+
+  
+  ngOnChanges(){
+    console.log("App Component ngOnChanges Called");
   }
-  abc(){
-    this.students.sort();
+  ngDoCheck(){
+    console.log("App Component ngDoCheck Called");
   }
-  empsort(k:any){
-    this.employees.sort((a:any,b:any)=>{
-      if(a[k]>b[k]){
-        return 1
-      }
-      else{
-        return -1;
-      }
-    })
+  ngViewInit(){
+    console.log("App Component ngViewInit Called");
   }
-  firstname="praveen";
-  lastname="gubbala"
-  num1=100;
-  num2=200;
-  students=['akhila','pavan','kalyan','siva','srinivas','prashant','naseer']
-  employees=[
-    {
-      firstname:'srinivas',
-      lastname:'korukonda',
-      age:33,
-      gender:'male'
-    },
-    {
-      firstname:'jayaprada',
-      lastname:'reddy',
-      age:25,
-      gender:'female'
-    },
-    {
-      firstname:'rani',
-      lastname:'reddy',
-      age:22,
-      gender:'female'
-    },
-    {
-      firstname:'rohit',
-      lastname:'vendra',
-      age:21,
-      gender:'male'
-    },
-    {
-      firstname:'pahi',
-      lastname:'tamuli',
-      age:19,
-      gender:'female'
-    },
-    {
-      firstname:'govindu',
-      lastname:'avala',
-      age:29,
-      gender:'male'
-    },
-  ]
+  ngContentInit(){
+    console.log("App Component ngContentInit Called");
+  }
+  ngViewChecked(){
+    console.log("App Component ngViewChecked Called");
+  }
+  ngContentChecked(){
+    console.log("App Component ngContentChecked Called");
+  }
+  ngOnDestroy(){
+    console.log("App Component ngOnDestroy Called");
+  }
 }
 
-//properties//data//state
-//logic//methods//action
-  //eventhandlers//lifecycle methods and their logic
-//change detection
-// data binding(oneway)
-// event binding
-// property binding
-// twoway data binding
-
-//directive
-//ngFor

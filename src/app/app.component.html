@@ -1,28 +1,9 @@
-<input type="text" [value]="firstname" (keyup)="updateFirstname($event)">
-
-
-<h1>{{firstname}}</h1>
-
-
-<input type="text" [(ngModel)]="lastname">
-
-
-
-<h1>{{lastname}}</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="mybox">
+    <input type="text" [(ngModel)]="firstname">
+    <app-header></app-header>
+    <app-mainarea></app-mainarea>
+    <app-footer [x]="firstname"></app-footer>
+</div>
 
 
 
@@ -30,28 +11,11 @@
 
 
 <!-- 
-
-<button (click)="abc()">Lets understand Event Handling...</button>
-
-<table border="2">
-    <thead>
-        <tr>
-            <th (click)="empsort('firstname')">Fristname</th>
-            <th (click)="empsort('lastname')">Lastname</th>
-            <th (click)="empsort('age')">Age</th>
-            <th (click)="empsort('gender')">Gender</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let e of employees" [class]="e.gender==='male'?'boys':'girls'">
-        <td>{{e.firstname}}</td>
-        <td>{{e.lastname}}</td>
-        <td>{{e.age}}</td>
-        <td>{{e.gender}}</td>
-    </tr>
-    
-</table>
-<h4 *ngFor="let s of students">{{s}}</h4>
-<ol>
-    <li *ngFor="let p of students">{{p}}</li>
-</ol>
+    life cycle hooks
+        1. mounting
+            when the component load for the first time
+        2. updation
+            when the component data changes angular change detection mechanism re-renders the component
+        3. unmounting
+            when the component removes from the page(DOM)
  -->
