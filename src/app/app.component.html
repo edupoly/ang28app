@@ -1,57 +1,7 @@
-<input type="text" [value]="firstname" (keyup)="updateFirstname($event)">
-
-
-<h1>{{firstname}}</h1>
-
-
-<input type="text" [(ngModel)]="lastname">
-
-
-
-<h1>{{lastname}}</h1>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-<button (click)="abc()">Lets understand Event Handling...</button>
-
-<table border="2">
-    <thead>
-        <tr>
-            <th (click)="empsort('firstname')">Fristname</th>
-            <th (click)="empsort('lastname')">Lastname</th>
-            <th (click)="empsort('age')">Age</th>
-            <th (click)="empsort('gender')">Gender</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let e of employees" [class]="e.gender==='male'?'boys':'girls'">
-        <td>{{e.firstname}}</td>
-        <td>{{e.lastname}}</td>
-        <td>{{e.age}}</td>
-        <td>{{e.gender}}</td>
-    </tr>
-    
-</table>
-<h4 *ngFor="let s of students">{{s}}</h4>
-<ol>
-    <li *ngFor="let p of students">{{p}}</li>
-</ol>
- -->
+<div class="mybox">
+    <h1>App</h1>
+    <input type="text" [(ngModel)]="c1s" placeholder="counter1 step value"><br>
+    <input type="text" [(ngModel)]="c2s" placeholder="counter2 step value"><br>
+    <app-counter [count]="10" [step]="+c1s"></app-counter>
+    <app-counter [count]="200" [step]="+c2s"></app-counter>
+</div>
