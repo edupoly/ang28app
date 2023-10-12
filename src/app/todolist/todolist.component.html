@@ -1,0 +1,18 @@
+<div class="mybox">
+    <h1>Todolist</h1>
+    <input type="text" [(ngModel)]="newtask">
+    <button (click)="addTask()">Add Task</button>
+    <br>
+    <input (change)="applyFilter()" type="radio" value="all" [(ngModel)]="selectedFilter">:All &nbsp;&nbsp;&nbsp;
+    <input (change)="applyFilter()" type="radio" value="completed" [(ngModel)]="selectedFilter">:Completed &nbsp;&nbsp;&nbsp;
+    <input (change)="applyFilter()" type="radio" value="pending" [(ngModel)]="selectedFilter">:Pending &nbsp;&nbsp;&nbsp;
+
+    <ul>
+        <li *ngFor="let task of filteredTasks;let i = index" [style.textDecoration]="task.status?'line-through':''">
+            {{task.title}}
+            <button (click)="deleteTask(i)">Delete</button>
+            <button (click)="doneTask(i)" *ngIf="!task.status">done</button>
+            <button (click)="undoTask(i)" *ngIf="task.status">undo</button>
+        </li>
+    </ul>
+</div>
