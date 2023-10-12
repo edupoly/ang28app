@@ -1,0 +1,6 @@
+<div>
+    {{task.title}}
+    <button (click)="delTask.emit(i)">Delete</button>
+    <button (click)="doneTask.emit(i)" *ngIf="!task.status">done</button>
+    <button (click)="undoTask.emit(i)" *ngIf="task.status">undo</button>
+</div>

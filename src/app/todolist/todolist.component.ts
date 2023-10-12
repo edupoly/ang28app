@@ -44,12 +44,15 @@ export class TodolistComponent {
     this.newtask=''
   }
   deleteTask(ind:number){
-    this.tasks.splice(ind,1)
+    this.tasks.splice(ind,1);
+    this.filteredTasks=[...this.tasks]
   }
   doneTask(id:number){
     this.tasks[id].status=true;
+    this.filteredTasks=[...this.tasks]
   }
   undoTask(id:number){
     this.tasks[id].status=false
+    this.filteredTasks=[...this.tasks]
   }
 }
