@@ -1,0 +1,12 @@
+<img *ngIf="isLoading" src="https://cdn.dribbble.com/users/1787505/screenshots/7300251/media/a351d9e0236c03a539181b95faced9e0.gif">
+
+<div style="display: flex;flex-wrap: wrap;">
+    <ul style="width:45%">
+        <li *ngFor="let country of countries">
+            <a [routerLink]="['countryDetails/',country.name.common]" [queryParams]="abc(country)">{{country.name.common}}</a>
+        </li>
+    </ul>
+    <div style="width:45%">
+        <router-outlet></router-outlet>
+    </div>
+</div>

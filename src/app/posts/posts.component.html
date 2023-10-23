@@ -1,0 +1,21 @@
+<div class="mybox">
+    <h4>All Posts</h4>
+    <table border="2" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Post</th>
+                <th>Author</th>
+                <th>Ops</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let post of posts">
+                <td>{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td>{{post.author}}</td>
+                <td><button (click)="delPost(post.id)">Del</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
