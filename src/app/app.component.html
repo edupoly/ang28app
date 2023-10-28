@@ -1,17 +1,16 @@
-<h1>{{x}}</h1>
-<input type="text" [(ngModel)]="x">
-<br>
-<input type="radio" name="gen" [(ngModel)]="gender" value="M">:Male &nbsp; &nbsp; &nbsp;
-<input type="radio" name="gen" [(ngModel)]="gender" value="F">:Female &nbsp; &nbsp; &nbsp;
-<input type="radio" name="gen" [(ngModel)]="gender" value="O">:Others &nbsp; &nbsp; &nbsp;
-<h1>Selected Gender : {{gender}}</h1>
-
-<img *ngIf="gender==='M'" [src]="maleImg" alt="" width="100px">
-<img *ngIf="gender==='F'" [src]="femaleImg" alt="" width="100px">
-<img *ngIf="gender==='O'" [src]="othersImg" alt="" width="100px">
-
-<div *ngFor="let t of allTechnologies" >
-    <input type="checkbox" [value]="t" (change)="updateTechnologies($event)">
-    {{t}}
+<div class="mybox">
+    <h1>Template Form Control</h1>
+    <input type="text" [(ngModel)]="x">
+    <b> {{x}}</b>
+    <br>
 </div>
-<h1 *ngFor="let t of selectedTechnologies">{{t}}</h1>
+
+<div class="mybox">
+    <h1>React From control</h1>
+    <input type="text" [formControl]="username">
+    <b>{{username.value}}</b>
+    <div>
+        <b *ngIf="username.touched && username.errors && username.errors['required']">Please Enter Username</b>
+    </div>
+    <!-- <i>{{username|json}}</i> -->
+</div>
