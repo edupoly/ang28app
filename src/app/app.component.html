@@ -1,17 +1,17 @@
-<h1>{{x}}</h1>
-<input type="text" [(ngModel)]="x">
-<br>
-<input type="radio" name="gen" [(ngModel)]="gender" value="M">:Male &nbsp; &nbsp; &nbsp;
-<input type="radio" name="gen" [(ngModel)]="gender" value="F">:Female &nbsp; &nbsp; &nbsp;
-<input type="radio" name="gen" [(ngModel)]="gender" value="O">:Others &nbsp; &nbsp; &nbsp;
-<h1>Selected Gender : {{gender}}</h1>
-
-<img *ngIf="gender==='M'" [src]="maleImg" alt="" width="100px">
-<img *ngIf="gender==='F'" [src]="femaleImg" alt="" width="100px">
-<img *ngIf="gender==='O'" [src]="othersImg" alt="" width="100px">
-
-<div *ngFor="let t of allTechnologies" >
-    <input type="checkbox" [value]="t" (change)="updateTechnologies($event)">
-    {{t}}
+<h3>Student Form</h3>
+<div [formGroup]="studentForm">
+    First name:<input type="text" formControlName="firstname" placeholder="First Name">
+    <br>
+    Last name:<input type="text" formControlName="lastname" placeholder="Last Name">
+    <br>
+    MobileNum:
+    <div formArrayName="mobilenumbers">
+        <div *ngFor="let mb of mobilenumbers.controls;let i = index">
+            <input type="text" [formControlName]="i">
+        </div>
+    </div>
+    
+    <button (click)="addAnotherMobileNumber()">+Add</button>
+    <br>
+    <button (click)="showStudent()">Show Student</button>
 </div>
-<h1 *ngFor="let t of selectedTechnologies">{{t}}</h1>
