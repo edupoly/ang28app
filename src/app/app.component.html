@@ -1,17 +1,17 @@
 <h3>Student Form</h3>
 <div [formGroup]="studentForm">
-    First name:<input type="text" formControlName="firstname" placeholder="First Name">
+    Firstname:<input type="text" formControlName="firstname">
     <br>
-    Last name:<input type="text" formControlName="lastname" placeholder="Last Name">
+    Lastname:<input type="text" formControlName="lastname">
     <br>
-    MobileNum:
+    Mobile Numbers:
+    <button (click)="addAnother()">Add Another </button>
     <div formArrayName="mobilenumbers">
-        <div *ngFor="let mb of mobilenumbers.controls;let i = index">
+        <div *ngFor="let mb of mobilenumbers.controls;let i=index">
             <input type="text" [formControlName]="i">
         </div>
     </div>
-    
-    <button (click)="addAnotherMobileNumber()">+Add</button>
+
     <br>
-    <button (click)="showStudent()">Show Student</button>
+    <button (click)="showStud()">Show Student</button>
 </div>

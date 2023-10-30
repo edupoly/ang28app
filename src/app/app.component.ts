@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl,FormGroup } from '@angular/forms'
+import { FormArray, FormBuilder, FormControl,FormGroup } from '@angular/forms'
 @Component({
   selector: 'edupoly',
   templateUrl: './app.component.html',
@@ -7,21 +7,22 @@ import { FormArray, FormControl,FormGroup } from '@angular/forms'
 })
 export class AppComponent {
   
-
-  studentForm = new FormGroup(
-    {
-      firstname:new FormControl(),
-      lastname:new FormControl(),
-      mobilenumbers:new FormArray([new FormControl(),new FormControl(),new FormControl()])
-    }
-  )
+  constructor(public fb:FormBuilder){}
+  studentForm:any;
+  ngOnInit(){
+    this.studentForm=this.fb.group({
+      firstname:[],
+      lastname:[],
+      mobilenumbers:this.fb.array([[],[],[],[]])
+    })
+  }
   get mobilenumbers(){
     return this.studentForm.get('mobilenumbers') as FormArray
   }
-  addAnotherMobileNumber(){
-    this.mobilenumbers.push(new FormControl())
-  }
-  showStudent(){
+  showStud(){
     console.log(this.studentForm.value)
+  }
+  addAnother(){
+    this.mobilenumbers.push(this.fb.control(''))
   }
 }
