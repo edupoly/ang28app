@@ -1,16 +1,17 @@
-<div class="mybox">
-    <h1>Template Form Control</h1>
-    <input type="text" [(ngModel)]="x">
-    <b> {{x}}</b>
+<div [formGroup]="studentForm">
+    FullName:<input type="text" formControlName="fullname">
     <br>
-</div>
+    Gender:
+    <input type="radio" value="male" formControlName="gender">:male
+    <input type="radio" value="female" formControlName="gender">:female
+    <input type="radio" value="others" formControlName="gender">:others
+    <br>
+    technlogies:
+    <br>
+    <div >
 
-<div class="mybox">
-    <h1>React From control</h1>
-    <input type="text" [formControl]="username">
-    <b>{{username.value}}</b>
-    <div>
-        <b *ngIf="username.touched && username.errors && username.errors['required']">Please Enter Username</b>
     </div>
-    <!-- <i>{{username|json}}</i> -->
+</div>
+<div>
+    <i>{{studentForm.value|json}}</i>
 </div>
