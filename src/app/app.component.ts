@@ -23,9 +23,12 @@ export class AppComponent {
     return this.studentForm.get('techs') as FormArray
   }
 
-  updateTechnolgies(e:any){
-    this.temp.push(e.target.value);
-    console.log(this.temp)
+  updateTechs(e:any,ind:any){
+    console.log(e.target.checked)
+    if(e.target.checked){
+      this.techs.at(ind).setValue(this.technologies[ind])
+    }
+    
     // this.studentForm.controls.techs.patchValue(...this.temp)
   }
 }

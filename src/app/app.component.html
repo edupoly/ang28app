@@ -8,8 +8,11 @@
     <br>
     technlogies:
     <br>
-    <div >
-
+    <div formArrayName="techs">
+        <div *ngFor="let t of techs.controls;let i=index">
+            <input type="checkbox" (change)="updateTechs($event,i)" [formControlName]="i">
+            {{technologies[i]}}
+        </div>
     </div>
 </div>
 <div>
