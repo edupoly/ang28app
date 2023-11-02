@@ -1,1 +1,15 @@
-<h1>Basic</h1>
+<!-- <h1>{{"Basic"|lowercase}}</h1>
+<h1>{{firstname|uppercase}}</h1>
+<h1>{{firstname|slice:3:6}}</h1> -->
+<input type="text" [(ngModel)]="price">
+<h1>{{price|currency}}</h1>
+<h1>{{price|currency:'INR'}}</h1>
+<h2>{{tax|currency}}</h2>
+<h5>{{today|date:'MMM-dd-yyyy'}}</h5>
+<button (click)="setOrder('a')">Ascending</button>
+<button (click)="setOrder('d')">Descending</button>
+<ul>
+    <li *ngFor="let student of students|slice:4:8|sort:order">
+        {{student}}
+    </li>
+</ul>
