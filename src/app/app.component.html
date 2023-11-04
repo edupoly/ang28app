@@ -1,1 +1,6 @@
 <h1>Basic</h1>
+<input type="text" [(ngModel)]="newvalue">
+<button (click)="addValue()">add</button>
+<ul>
+    <li *ngFor="let v of x;trackBy:checkIt" >{{v}}</li>
+</ul>
