@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ChildComponent } from './child/child.component';
+import { SpecialDirective } from './special.directive';
+import { ClearnumberDirective } from './clearnumber.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent
+    ChildComponent,
+    SpecialDirective,
+    ClearnumberDirective
   ],
   imports: [
     BrowserModule,
