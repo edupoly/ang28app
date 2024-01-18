@@ -8,14 +8,17 @@ import {HttpClientModule} from '@angular/common/http';
 import { PostsComponent } from './posts/posts.component';
 import { CountriesComponent } from './countries/countries.component';
 import { AddpostComponent } from './addpost/addpost.component';
-import { CountrydetailsComponent } from './countrydetails/countrydetails.component' 
+import { CountrydetailsComponent } from './countrydetails/countrydetails.component';
+import { SignupComponent } from './signup/signup.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     PostsComponent,
     CountriesComponent,
     AddpostComponent,
-    CountrydetailsComponent
+    CountrydetailsComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

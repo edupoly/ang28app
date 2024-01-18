@@ -4,6 +4,7 @@ import { CountriesComponent } from './countries/countries.component';
 import { PostsComponent } from './posts/posts.component';
 import { AddpostComponent } from './addpost/addpost.component';
 import { CountrydetailsComponent } from './countrydetails/countrydetails.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path:'addPost',
     component:AddpostComponent
+  },
+  {
+    path:'signup',
+    component:SignupComponent
   }
 ];
 
