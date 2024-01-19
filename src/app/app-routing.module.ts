@@ -4,6 +4,8 @@ import { CountriesComponent } from './countries/countries.component';
 import { PostsComponent } from './posts/posts.component';
 import { AddpostComponent } from './addpost/addpost.component';
 import { CountrydetailsComponent } from './countrydetails/countrydetails.component';
+import { postguardGuard } from './postguard.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -18,11 +20,16 @@ const routes: Routes = [
   },
   {
     path:"posts",
-    component:PostsComponent
+    component:PostsComponent,
+    canActivate:[postguardGuard]
   },
   {
     path:'addPost',
     component:AddpostComponent
+  },
+  {
+    path:'login',
+    component:LoginComponent
   }
 ];
 
