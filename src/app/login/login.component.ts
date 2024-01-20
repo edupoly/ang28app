@@ -38,6 +38,7 @@ firebaseConfig = {
       window.localStorage.setItem("token",result['user']['accessToken'])
       window.localStorage.setItem("displayName",result['user']['displayName'])
       window.localStorage.setItem("photoURL",result['user']['photoURL'])
+      this.login();
     })
   }
 }

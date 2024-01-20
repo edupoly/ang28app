@@ -39,5 +39,7 @@ constructor(public router:Router){
     window.localStorage.clear();
     this.router.navigate(['/login'])
     this.loginStatus=false;
+    this.displayName=null;
+    this.photoURL=null
   }
 }

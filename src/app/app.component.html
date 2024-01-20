@@ -1,4 +1,4 @@
-<div class="mybox" style="display: flex;justify-content: space-between;">
+<div class="mybox" style="display: flex;justify-content: space-between;align-items: center;">
     <div>
         <a routerLink="countries" routerLinkActive="highlight">Countries</a> &nbsp;&nbsp;
         <a routerLink="posts" routerLinkActive="highlight">Posts</a> &nbsp;&nbsp;
@@ -6,8 +6,8 @@
         <a routerLink="login" routerLinkActive="highlight" *ngIf="!loginStatus">Login</a> &nbsp;&nbsp;
         <span (click)="logout()" *ngIf="loginStatus">Logout</span>
     </div>
-    <div style="display: flex;flex-direction: column;justify-items: center;">
-        <img [src]="photoURL" alt="" style="border-radius: 50%;width:50px;">
+    <div style="display: flex;flex-direction: column;justify-items: center;align-items: center;">
+        <img [src]="photoURL" alt="" style="border-radius: 50%;width:25px;">
         <b>{{displayName}}</b>
     </div>
 </div>
