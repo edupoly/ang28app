@@ -10,9 +10,17 @@ export class AddpostComponent {
   constructor(public ps:PostService){}
   newPost:any={
     title:'',
-    author:''
+    author:window.localStorage.getItem('emailid'),
+    share:[],
+    publishedOn:''
   }
+  friends:string|null=null;
   addPost(){
+    this.newPost.publishedOn=(new Date()).getTime();
+    if(this.friends){
+      this.newPost.share=[...this.friends.split(',')]
+      console.log(this.newPost)
+    }
     this.ps.addNewPost(this.newPost).subscribe({
       next:(data)=>{
         console.log(data)

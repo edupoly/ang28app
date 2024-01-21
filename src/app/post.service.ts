@@ -14,7 +14,9 @@ export class PostService {
   getAllPosts(){
     return this.http.get("http://localhost:3000/posts")
   }
-
+  getAllPostsByAuthor(email:string|null){
+    return this.http.get("http://localhost:3000/posts?author="+email)
+  }
   addNewPost(newpost:any){
     return this.http.post("http://localhost:3000/posts",newpost)
   }

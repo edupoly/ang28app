@@ -24,6 +24,7 @@ constructor(public router:Router){
     if(window.localStorage.getItem('displayName')){
       this.displayName=window.localStorage.getItem('displayName');
       this.photoURL=window.localStorage.getItem('photoURL');
+      this.loginStatus=true;
     }
   }
   ngOnInit(){
@@ -37,6 +38,8 @@ constructor(public router:Router){
   }
   logout(){
     window.localStorage.clear();
+    this.displayName=null;
+    this.photoURL=null;
     this.router.navigate(['/login'])
     this.loginStatus=false;
   }

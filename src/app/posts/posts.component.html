@@ -18,4 +18,23 @@
             </tr>
         </tbody>
     </table>
+    <h4>Shared Posts</h4>
+    <table border="2" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Post</th>
+                <th>Author</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let post of sharedPosts">
+                <td>{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td>{{post.author}}</td>
+
+            </tr>
+        </tbody>
+    </table>
 </div>

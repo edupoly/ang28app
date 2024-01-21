@@ -10,7 +10,7 @@ import { PostService } from '../post.service';
 export class PostsComponent {
   constructor(public ps:PostService){}
   posts:any;
-
+  sharedPosts:any;
   ngOnInit(){
     this.ps.notifyNewPost$.subscribe(()=>{
       this.getAllPosts2()
@@ -18,13 +18,24 @@ export class PostsComponent {
     this.getAllPosts2();
   }
   getAllPosts2(){
-    this.ps.getAllPosts().subscribe({
+    this.ps.getAllPostsByAuthor(window.localStorage.getItem('emailid')).subscribe({
       next:(data)=>{
         this.posts=data;
       },
       error:(err)=>{
         console.log(err)
       }
+    })
+    this.ps.getAllPosts().subscribe((res:any)=>{
+      var temp = res.filter((post:any)=>{
+        if(post.share?.includes(window.localStorage.getItem('emailid'))){
+          return true
+        }
+        else{
+          return false;
+        }
+      })
+      this.sharedPosts=[...temp];
     })
   }
   delPost(id:any){

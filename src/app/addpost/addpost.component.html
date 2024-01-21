@@ -1,7 +1,11 @@
 <div class="mybox">
-    <input type="text" [(ngModel)]="newPost.title">
+    Post:
     <br>
-    <input type="text" [(ngModel)]="newPost.author">
+    <textarea [(ngModel)]="newPost.title" style="width:50%" rows="10"></textarea>
+    <br>
+    share:
+    <br>
+    <textarea style="width:50%" [(ngModel)]="friends"></textarea>
     <br>
     <button (click)="addPost()">Add Post</button>
 </div>
